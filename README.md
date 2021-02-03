@@ -1,6 +1,12 @@
 # Docker Utils
 Commands for Docker environment
 
+### FTP
+
+```bash
+$ sudo docker run -d -v <path>:/home/vsftpd -p 20:20 -p 21:21 -p 47400-47470:47400-47470 -e FTP_USER=admin -e FTP_PASS=123456 -e PASV_ADDRESS=<ip> --name <container> --restart=always bogem/ftp
+```
+
 ### MySQL
 
 ##### Create

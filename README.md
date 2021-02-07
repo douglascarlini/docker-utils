@@ -35,3 +35,10 @@ $ sudo docker exec <container> mysqldump -u root -p<password> <database> | gzip 
 ```bash
 $ zcat <filename>.sql.gz | sudo docker exec -i <container> mysql -u root -p<password> <database>
 ```
+
+### \# Misc
+
+##### Clear Container Logs
+```bash
+echo "" > $(docker inspect --format='{{.LogPath}}' <container>)
+```

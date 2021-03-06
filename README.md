@@ -45,3 +45,15 @@ $ sudo docker exec -i <container> mysql -u root -p<password> -e "SET @@global.ti
 ```bash
 echo "" > $(docker inspect --format='{{.LogPath}}' <container>)
 ```
+
+##### Backup Container to File
+```bash
+$ sudo docker commit -p <container> <backup-name>
+$ sudo docker save -o <backup-name>.tar <backup-name>
+```
+
+##### Restore Container Backup from File
+```bash
+$ sudo docker load −i <backup-name>.tar
+$ sudo docker run −ti <backup−name>
+```

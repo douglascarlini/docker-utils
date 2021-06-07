@@ -19,6 +19,11 @@ docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 33
 docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 3306:3306 -d mysql/mysql-server:5.7 --character-set-server=utf8 --collation-server=utf8_unicode_ci
 ```
 
+##### Create (mariaDB)
+```bash
+docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 3306:3306 -d ghcr.io/linuxserver/mariadb --character-set-server=utf8 --collation-server=utf8_unicode_ci
+```
+
 ##### Create database
 
 ```bash

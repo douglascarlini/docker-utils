@@ -11,6 +11,11 @@ docker run --name <container> --restart=always -v <path>:/home/vsftpd -p 20:20 -
 
 ##### Create
 ```bash
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 3306:3306 -d mysql/mysql-server --default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_unicode_ci
+```
+
+##### Create (v5.7)
+```bash
 docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 3306:3306 -d mysql/mysql-server:5.7 --character-set-server=utf8 --collation-server=utf8_unicode_ci
 ```
 

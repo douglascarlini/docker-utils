@@ -32,7 +32,7 @@ docker exec -i mysql57 mysql -u root -p123456 -e "CREATE DATABASE dbname;"
 
 ##### Restore database
 ```bash
-zcat dbname.sql.gz | sudo docker exec -i mysql57 mysql -u root -p123456 dbname
+zcat dbname.sql.gz | docker exec -i mysql57 mysql -u root -p123456 dbname
 ```
 
 ##### Create database backup

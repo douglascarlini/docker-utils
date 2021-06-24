@@ -52,6 +52,9 @@ docker exec -it <container> mysql -u root -p<password> -e "SET GLOBAL sql_mode=(
 
 # Alter database global time zone
 docker exec -i <container> mysql -u root -p<password> -e "SET @@global.time_zone = '-03:00'";
+
+# Fix error 'MySQL Server has gone away'
+docker exec -i <container> mysql -u root -p<password> -e "SET GLOBAL max_allowed_packet=1073741824;"
 ```
 
 ### \# Misc

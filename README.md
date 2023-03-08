@@ -29,6 +29,11 @@ docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 3306:3306 -d ghcr.io/linuxserver/mariadb
 ```
 
+##### PHPMyAdmin
+```
+docker run --name phpmyadmin -d -e PMA_HOST=ip.do.servidor.mysql -e PMA_PORT=3306 -p 8080:80 -d phpmyadmin
+```
+
 ##### Create database
 
 ```bash

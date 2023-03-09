@@ -31,8 +31,17 @@ docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 
 
 ##### PHPMyAdmin
 ```
-docker run --name phpmyadmin -d -e PMA_HOST=ip.do.servidor.mysql -e PMA_PORT=3306 -p 8080:80 -d phpmyadmin
+docker run --name phpmyadmin -e PMA_HOST=ip.do.servidor.mysql -e PMA_PORT=3306 -p 8080:80 -d phpmyadmin
 ```
+
+##### PHP
+```
+docker run --name php72 -p 8000:80 -v $PWD:/var/www/html -d douglascarlini/php:7.2
+```
+
+> `$PWD` on Linux/Mac get the current directory path.
+
+#### \# MySQL Misc
 
 ##### Create database
 
@@ -50,7 +59,8 @@ zcat dbname.sql.gz | docker exec -i mysql57 mysql -u root -p123456 dbname
 docker exec mysql57 mysqldump -u root -p123456 dbname | gzip > dbname.sql.gz
 ```
 
-##### Misc
+#### Outro
+
 ```bash
 # Fix error about 'ONLY_FULL_GROUP_BY'
 docker exec -it <container> mysql -u root -p<password> -e "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"

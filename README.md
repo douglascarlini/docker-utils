@@ -31,7 +31,7 @@ docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=% -p 
 
 ##### PHPMyAdmin
 ```
-docker run --name phpmyadmin -e PMA_HOST=ip.do.servidor.mysql -e PMA_PORT=3306 -p 8080:80 -d phpmyadmin
+docker run --name phpmyadmin -e PMA_HOST=mysql.server.host.addr -e PMA_PORT=3306 -p 8080:80 -d phpmyadmin
 ```
 
 ##### PHP
